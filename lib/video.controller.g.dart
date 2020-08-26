@@ -340,7 +340,7 @@ mixin _$VideoController on _VideoController, Store {
   }
 
   @override
-  void setSource(VideoPlayerController source) {
+  void setSource(vph.VideoPlayerController source) {
     final _$actionInfo = _$_VideoControllerActionController.startAction();
     try {
       return super.setSource(source);

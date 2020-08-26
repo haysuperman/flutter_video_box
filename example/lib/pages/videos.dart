@@ -32,7 +32,7 @@ class _VideosState extends State<Videos> {
   }
 
   void _changeSource(String src) async {
-    vc.setSource(VideoPlayerController.network(src));
+    vc.setSource(vph.VideoPlayerController.network(src));
     vc.setCover(Center(
         child: Text(
       src,

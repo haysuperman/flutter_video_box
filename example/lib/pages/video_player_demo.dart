@@ -33,7 +33,7 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
         child: _controller.value.initialized
             ? AspectRatio(
                 aspectRatio: _controller.value.aspectRatio,
-                child: VideoPlayer(_controller),
+                child: vph.VideoPlayer(_controller),
               )
             : Container(
                 child: Center(child: Text('loading')),
