@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:video_box/video.controller.dart';
 import 'package:video_box/video_box.dart';
-import 'package:video_player_header/video_player_header.dart';
+import 'package:video_player_header/video_player_header.dart' as vph;
 
 import '../globals.dart';
 
@@ -18,7 +18,7 @@ class _ListVideoState extends State<ListVideo> {
   void initState() {
     super.initState();
     for (var i = 0; i < 4; i++) {
-      vcs.add(VideoController(source: VideoPlayerController.network(src1))
+      vcs.add(VideoController(source: vph.VideoPlayerController.network(src1))
         ..initialize());
     }
   }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_box/video_box.dart';
 // import 'package:video_box/widgets/buffer_slider.dart';
+import 'package:video_player_header/video_player_header.dart' as vph;
 
 import '../globals.dart';
 
@@ -78,7 +79,7 @@ class _OneVideoCtrlState extends State<OneVideoCtrl> {
     super.initState();
 
     vc = VideoController(
-      source: VideoPlayerController.network(src1),
+      source: vph.VideoPlayerController.network(src1),
       looping: true,
       autoplay: true,
       color: Colors.red,

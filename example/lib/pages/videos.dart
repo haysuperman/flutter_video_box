@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:video_box/video.controller.dart';
 import 'package:video_box/video_box.dart';
-import 'package:video_player_header/video_player_header.dart';
+import 'package:video_player_header/video_player_header.dart' as vph;
 
 import '../globals.dart';
 
@@ -17,7 +17,7 @@ class _VideosState extends State<Videos> {
   void initState() {
     super.initState();
     vc = VideoController(
-      source: VideoPlayerController.network(src1),
+      source: vph.VideoPlayerController.network(src1),
       cover: Text(
         'init cover',
         style: TextStyle(color: Colors.white),

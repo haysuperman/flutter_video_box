@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_player_header/video_player_header.dart' show DataSourceType;
+import 'package:video_player_header/video_player_header.dart' as vph show DataSourceType;
 
 class VideoState {
   VideoState({
@@ -21,7 +21,7 @@ class VideoState {
   });
 
   final String dataSource;
-  final DataSourceType dataSourceType;
+  final vph.DataSourceType dataSourceType;
   final Size size;
   final bool autoplay;
   final bool isLooping;

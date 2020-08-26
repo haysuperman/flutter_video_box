@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 
 import 'package:mobx/mobx.dart';
 import 'package:video_box/mixin/animation_icon_mixin.dart';
-import 'package:video_player_header/video_player_header.dart'
+import 'package:video_player_header/video_player_header.dart' as vph
     show DataSourceType, VideoPlayerController;
 
 import 'util.dart';
@@ -18,15 +18,15 @@ import 'video_state.dart';
 
 part 'video.controller.g.dart';
 
-extension VideoPlayerControllerExtensions on VideoPlayerController {
-  VideoPlayerController copyWith() {
+extension VideoPlayerControllerExtensions on vph.VideoPlayerController {
+  vph.VideoPlayerController copyWith() {
     switch (dataSourceType) {
-      case DataSourceType.network:
-        return VideoPlayerController.network(
+      case vph.DataSourceType.network:
+        return vph.VideoPlayerController.network(
           dataSource,
         );
-      case DataSourceType.asset:
-        return VideoPlayerController.asset(
+      case vph.DataSourceType.asset:
+        return vph.VideoPlayerController.asset(
           dataSource,
           package: package,
         );
@@ -53,7 +53,7 @@ void kAccelerometerEventsListenner(
 }
 
 class BaseVideoController {
-  VideoPlayerController videoCtrl;
+  vph.VideoPlayerController videoCtrl;
   Duration animetedIconDuration;
 }
 
@@ -61,7 +61,7 @@ abstract class _VideoController extends BaseVideoController
     with Store, VideoListennerMixin, CustomViewMixin, AnimationIconMixin {
   @action
   _VideoController({
-    VideoPlayerController source,
+    vph.VideoPlayerController source,
     this.skiptime = const Duration(seconds: 10),
     this.autoplay = false,
     this.looping = false,
@@ -104,7 +104,7 @@ abstract class _VideoController extends BaseVideoController
   }
 
   @override
-  VideoPlayerController videoCtrl;
+  vph.VideoPlayerController videoCtrl;
 
   bool _isDispose = false;
 
@@ -356,7 +356,7 @@ abstract class _VideoController extends BaseVideoController
   ///
   /// Replace the currently playing video resource
   @action
-  void setSource(VideoPlayerController source) {
+  void setSource(vph.VideoPlayerController source) {
     var oldCtrl = videoCtrl;
     Future.delayed(Duration(seconds: 1)).then((_) => oldCtrl?.dispose());
     videoCtrl = source;

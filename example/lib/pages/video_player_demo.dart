@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_player_header/video_player_header.dart';
+import 'package:video_player_header/video_player_header.dart' as vph;
 
 import '../globals.dart';
 
@@ -9,12 +9,12 @@ class VideoPlayerDemo extends StatefulWidget {
 }
 
 class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
-  VideoPlayerController _controller;
+  vph.VideoPlayerController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(src1)
+    _controller = vph.VideoPlayerController.network(src1)
       ..initialize().then((_) {
         setState(() {});
       });

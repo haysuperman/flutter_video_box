@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 // import 'package:video_player/video_player.dart';
-import 'package:video_player_header/video_player_header.dart';
+import 'package:video_player_header/video_player_header.dart' as vph;
 
 import 'video.controller.dart';
 import 'widgets/buffer_loading.dart';
@@ -13,7 +13,7 @@ import 'widgets/seek_to_view.dart';
 import 'widgets/video_bottom_ctroller.dart';
 
 export 'video.controller.dart';
-export 'package:video_player_header/video_player_header.dart';
+// export 'package:video_player_header/video_player_header.dart';
 
 class VideoBox extends StatefulObserverWidget {
   /// Example:
@@ -135,7 +135,7 @@ class _VideoBoxState extends State<VideoBox> with TickerProviderStateMixin {
                       : Center(
                           child: AspectRatio(
                             aspectRatio: controller.aspectRatio,
-                            child: VideoPlayer(controller.videoCtrl),
+                            child: vph.VideoPlayer(controller.videoCtrl),
                           ),
                         ),
                 ),

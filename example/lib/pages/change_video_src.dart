@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:video_box/video.controller.dart';
 import 'package:video_box/video_box.dart';
-import 'package:video_player_header/video_player_header.dart';
+import 'package:video_player_header/video_player_header.dart' as vph;
 
 import '../globals.dart';
 
@@ -23,14 +23,14 @@ class _ChangeVideoSrcState extends State<ChangeVideoSrc> {
       // +
       nv = nv % source.length;
       vc.autoplay = true;
-      vc.setSource(VideoPlayerController.network(source[nv]));
+      vc.setSource(vph.VideoPlayerController.network(source[nv]));
       vc.initialize();
     } else {
       // -
       nv = (nv + source.length) % source.length;
       vc.autoplay = false;
       vc.setControllerLayer(true);
-      vc.setSource(VideoPlayerController.network(source[nv]));
+      vc.setSource(vph.VideoPlayerController.network(source[nv]));
       vc.initialize();
     }
     _index = nv;
@@ -39,7 +39,7 @@ class _ChangeVideoSrcState extends State<ChangeVideoSrc> {
   @override
   void initState() {
     super.initState();
-    vc = VideoController(source: VideoPlayerController.network(source[index]))
+    vc = VideoController(source: vph.VideoPlayerController.network(source[index]))
       ..initialize();
   }
 
