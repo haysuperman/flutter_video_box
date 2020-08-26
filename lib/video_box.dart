@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:video_player/video_player.dart';
+// import 'package:video_player/video_player.dart';
+import 'package:video_player_header/video_player_header.dart';
 
 import 'video.controller.dart';
 import 'widgets/buffer_loading.dart';
@@ -12,7 +13,7 @@ import 'widgets/seek_to_view.dart';
 import 'widgets/video_bottom_ctroller.dart';
 
 export 'video.controller.dart';
-export 'package:video_player/video_player.dart';
+export 'package:video_player_header/video_player_header.dart';
 
 class VideoBox extends StatefulObserverWidget {
   /// Example:

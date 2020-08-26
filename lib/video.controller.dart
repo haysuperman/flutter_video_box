@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 
 import 'package:mobx/mobx.dart';
 import 'package:video_box/mixin/animation_icon_mixin.dart';
-import 'package:video_player/video_player.dart'
+import 'package:video_player_header/video_player_header.dart'
     show DataSourceType, VideoPlayerController;
 
 import 'util.dart';
@@ -24,14 +24,11 @@ extension VideoPlayerControllerExtensions on VideoPlayerController {
       case DataSourceType.network:
         return VideoPlayerController.network(
           dataSource,
-          formatHint: formatHint,
-          closedCaptionFile: closedCaptionFile,
         );
       case DataSourceType.asset:
         return VideoPlayerController.asset(
           dataSource,
           package: package,
-          closedCaptionFile: closedCaptionFile,
         );
       default:
         throw '其他不支持!!';

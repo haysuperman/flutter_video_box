@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  video_player: ^0.10.5
+  video_player_header: ^0.10.2+4
   mobx: ^1.1.1
   flutter_mobx: ^1.1.0
   sensors: '>=0.4.1+7 <2.0.0'

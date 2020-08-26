@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:video_box/video.controller.dart';
 import 'package:video_box/video_box.dart';
-import 'package:video_player/video_player.dart';
+import 'package:video_player_header/video_player_header.dart';
 
 import '../globals.dart';
 
